@@ -1,5 +1,5 @@
 # docker build -t ubuntu1604py36
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 LABEL maintainer="Kostiantyn Danylov <kdanilov@mirantis.com>" version="2.0"
 
@@ -15,11 +15,11 @@ COPY . /opt/wally
 RUN git clone https://github.com/koder-ua/cephlib.git /opt/cephlib && \
     git clone https://github.com/koder-ua/xmlbuilder3.git /opt/xmlbuilder3 && \
     git clone https://github.com/koder-ua/agent.git /opt/agent && \
-    python3.6 -m pip install pip --upgrade && \
+    python3 -m pip install pip --upgrade && \
     cd /opt/wally && \
-    python3.6 -m pip install wheel && \
-    python3.6 -m pip install -r requirements.txt && \
-    python3.6 -m pip install -U cryptography && \
+    python3 -m pip install wheel && \
+    python3 -m pip install -r requirements.txt && \
+    python3 -m pip install -U cryptography && \
     ln -s /opt/wally/scripts/wally /usr/bin && \
     chmod a+x /opt/wally/scripts/wally
 

@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python3.6 -m wally "$@"
+python3 -m wally "$@"

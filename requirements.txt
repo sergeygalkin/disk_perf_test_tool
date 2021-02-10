@@ -18,6 +18,7 @@ pytest
 python-cinderclient
 python-glanceclient
 python-keystoneclient
+python-openstackclient
 python-novaclient
 PyYAML
 requests
