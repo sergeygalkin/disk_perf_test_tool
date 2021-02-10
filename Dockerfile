@@ -15,6 +15,7 @@ COPY . /opt/wally
 RUN git clone https://github.com/koder-ua/cephlib.git /opt/cephlib && \
     git clone https://github.com/koder-ua/xmlbuilder3.git /opt/xmlbuilder3 && \
     git clone https://github.com/koder-ua/agent.git /opt/agent && \
+    git clone https://github.com/koder-ua/koder_utils  /opt/koder_utils && \
     python3 -m pip install pip --upgrade && \
     cd /opt/wally && \
     python3 -m pip install wheel && \
@@ -25,6 +26,6 @@ RUN git clone https://github.com/koder-ua/cephlib.git /opt/cephlib && \
 
 RUN apt purge -y python3-dev build-essential && apt -y autoremove
 
-ENV PYTHONPATH /opt/cephlib:/opt/xmlbuilder3:/opt/agent:/opt/wally
+ENV PYTHONPATH /opt/cephlib:/opt/xmlbuilder3:/opt/agent:/opt/wally:/opt/koder_utils
 
 CMD ["/bin/bash"]
